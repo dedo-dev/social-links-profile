@@ -1,4 +1,4 @@
-/* CSS RESET by Andy Bell (https://piccalil.li/blog/a-more-modern-css-reset/)*/
+/* CSS RESET by Andy Bell Full file here -->(https://piccalil.li/blog/a-more-modern-css-reset/)*/
 /* Box sizing rules */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -21,11 +21,6 @@ body {
   line-height: 1.5;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1, h2 {
-  line-height: 1.1;
-}
-
 /* Balance text wrapping on headings */
 h1, h2 {
   text-wrap: balance;
@@ -42,4 +37,59 @@ img,
 picture {
   max-width: 100%;
   display: block;
+}
+
+/* CUSTOM PROPERTIES */
+:root {
+    /* PRIMITIVES */
+    /* Color */
+    --primitive-neonGreen: hsl(75, 94%, 57%);
+    --primitive-white: hsl(0, 0%, 100%);
+    --primitive-grey: hsl(0, 0%, 20%);
+    --primitive-darkGrey: hsl(0, 0%, 12%);
+    --primitive-black: hsl(0, 0%, 8%);
+
+    /* Typography */
+    /* font family */
+    --primitive-fontFamily: 'Inter', sans-serif;
+    /* font size */
+    --primitive-fs14: .875rem;
+    --primitive-fs24: 1.5rem;
+    /* font weight */
+    --primitive-fw400: 400;
+    --primitive-fw600: 600;
+    --primitive-fw700: 700;
+
+    /* Spacing */
+    --primitive-size-4: .25rem;
+    --primitive-size-16: 1rem;
+    --primitive-size-24: 1.5rem;
+    --primitive-size-40: 2.5rem;
+
+    /* TOKENS */
+    /* Color */
+    --clr-bodyBG: var(--primitive-black);
+    --clr-bodyTxt: var(--primitive-white);
+    --clr-cardBG: var(--primitive-darkGrey);
+    --clr-cardLocation: var(--primitive-neonGreen);
+    --clr-cardLinkBG: var(--primitive-grey);
+    --clr-cardLinkBgHover: var(--primitive-neonGreen);
+    --clr-cardLinkTxtHover: var(--primitive-grey);
+
+    /* Typography */
+    --ff-body: var(--primitive-fontFamily);
+    --fs-cardName: var(--primitive-fs24);
+    --fw-cardName: var(--primitive-fw600);
+    --fs-cardLocation: var(--primitive-fs14);
+    --fw-cardLocation: var(--primitive-fw700);
+    --fs-cardDescription: var(--primitive-fs14);
+    --fs-cardLink: var(--primitive-fs14);
+    --fw-cardLink: var(--primitive-fw700);
+
+    /* Spacing */
+    --p-cardMobile: var(--primitive-size-24);
+    --p-cardDesktop: var(--primitive-size-40);
+    --m-cardMobile: var(--primitive-size-24);
+    --m-cardHeader: var(--primitive-size-4);
+    --m-cardLink: var(--primitive-size-16);
 }
