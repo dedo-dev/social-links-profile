@@ -49,6 +49,7 @@ img {
 
     /* Spacing */
     --primitive-size-4: .25rem;
+    --primitive-size-12: .75rem;
     --primitive-size-16: 1rem;
     --primitive-size-24: 1.5rem;
     --primitive-size-40: 2.5rem;
@@ -79,13 +80,13 @@ img {
     --m-cardMobile: var(--primitive-size-24);
     --m-cardHeader: var(--primitive-size-4);
     --m-cardLink: var(--primitive-size-16);
+    --p-cardLink: var(--primitive-size-12);
 }
 
 /* LAYOUT */
 
 /* Centering content for the Challenge */
 body {
-  min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;
   justify-items: center;
@@ -94,7 +95,7 @@ body {
 main {
   align-self: center;
 }
-/* ---------------------------------- */
+ /* ---------------------------------- */
 
 @font-face {
   font-family: 'Inter';
@@ -109,9 +110,14 @@ body {
   color: var(--clr-bodyTxt);
 }
 
-.card {
+.card,
+.card__header,
+.card__social {
   display: flex;
   flex-direction: column;
+}
+
+.card {
   align-items: center;
   gap: var(--m-cardMobile);
   max-width: 24rem;
@@ -127,21 +133,46 @@ body {
 }
 
 .card__header {
-  display: flex;
-  flex-direction: column;
   gap: var(--m-cardHeader);
 }
 
 .card__header-name {
   font-size: var(--fs-cardName);
+  font-weight: var(--fw-cardName);
 }
 
 .card__header-location {
   color: var(--clr-cardLocation);
   font-size: var(--fs-cardLocation);
+  font-weight: var(--fw-cardLocation);
 }
 
+.card__desc {
+  font-size: var(--fs-cardDescription);
+}
 
+.card__social {
+  gap: var(--m-cardLink);
+  width: 100%;
+}
+
+.card__social-item {
+  background: var(--clr-cardLinkBG);
+  padding: var(--p-cardLink);
+  border-radius: 8px;
+}
+
+.card__social-item:hover {
+  cursor: pointer;
+  background: var(--clr-cardLinkBgHover);
+  color: var(--clr-cardLinkTxtHover);
+}
+
+.card__social-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--fw-cardLink);
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
