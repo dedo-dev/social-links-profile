@@ -73,13 +73,15 @@ img {
     --fs-cardDescription: var(--primitive-fs14);
     --fs-cardLink: var(--primitive-fs14);
     --fw-cardLink: var(--primitive-fw700);
+    --fs-attribution: clamp(0.6875rem, 0.6223rem + 0.3261vi, 0.875rem);
 
     /* Spacing */
+    --m-bodyMobile: var(--primitive-size-24);
+    --gap-cardMobile: var(--primitive-size-24);
+    --gap-cardHeader: var(--primitive-size-4);
+    --gap-cardLink: var(--primitive-size-16);
     --p-cardMobile: var(--primitive-size-24);
     --p-cardDesktop: var(--primitive-size-40);
-    --m-cardMobile: var(--primitive-size-24);
-    --m-cardHeader: var(--primitive-size-4);
-    --m-cardLink: var(--primitive-size-16);
     --p-cardLink: var(--primitive-size-12);
 }
 
@@ -89,7 +91,6 @@ img {
 body {
   display: grid;
   grid-template-rows: 1fr auto;
-  justify-items: center;
 }
 
 main {
@@ -108,6 +109,7 @@ body {
   font-family: var(--ff-body);
   background: var(--clr-bodyBG);
   color: var(--clr-bodyTxt);
+  margin-inline: var(--m-bodyMobile);
 }
 
 .card,
@@ -119,13 +121,19 @@ body {
 
 .card {
   align-items: center;
-  gap: var(--m-cardMobile);
+  gap: var(--gap-cardMobile);
   max-width: 24rem;
-  margin-inline: var(--m-cardMobile);
+  margin-inline: auto;
   padding: var(--p-cardMobile);
   background: var(--clr-cardBG);
   border-radius: 12px;
   text-align: center;
+}
+
+@media (width >= 26.56em) {
+  .card {
+    padding: var(--p-cardDesktop);
+  }
 }
 
 .card__profile-img {
@@ -133,7 +141,7 @@ body {
 }
 
 .card__header {
-  gap: var(--m-cardHeader);
+  gap: var(--gap-cardHeader);
 }
 
 .card__header-name {
@@ -152,27 +160,36 @@ body {
 }
 
 .card__social {
-  gap: var(--m-cardLink);
+  gap: var(--gap-cardLink);
   width: 100%;
 }
 
-.card__social-item {
-  background: var(--clr-cardLinkBG);
+.card__social-link {
+  cursor: pointer;
+  display: block;
+  width: 100%;
   padding: var(--p-cardLink);
+  background: var(--clr-cardLinkBG);
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--fw-cardLink);
   border-radius: 8px;
 }
 
-.card__social-item:hover {
-  cursor: pointer;
+.card__social-link:hover,
+.card__social-link:focus {
   background: var(--clr-cardLinkBgHover);
   color: var(--clr-cardLinkTxtHover);
 }
 
-.card__social-link {
-  color: inherit;
-  text-decoration: none;
-  font-weight: var(--fw-cardLink);
+.attribution {
+  font-size: var(--fs-attribution);
+  font-weight: var(--primitive-fw700);
+  text-align: center;
+  margin-block-start: auto;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a {
+  color: var(--primitive-neonGreen);
+  text-underline-offset: 2px;
+}
