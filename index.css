@@ -1,4 +1,4 @@
-/* CSS RESET by Andy Bell Full file here -->(https://piccalil.li/blog/a-more-modern-css-reset/)*/
+/* CSS RESET by Andy Bell */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -96,6 +96,7 @@ body {
 main {
   align-self: center;
 }
+
  /* ---------------------------------- */
 
 @font-face {
@@ -186,7 +187,6 @@ body {
   font-size: var(--fs-attribution);
   font-weight: var(--primitive-fw700);
   text-align: center;
-  margin-block-start: auto;
 }
 
 .attribution a {
