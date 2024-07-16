@@ -1,40 +1,27 @@
 /* CSS RESET by Andy Bell Full file here -->(https://piccalil.li/blog/a-more-modern-css-reset/)*/
-/* Box sizing rules */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, p {
-  margin-block-end: 0;
+body, h1, h2, p, ul {
+  margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul {
   list-style: none;
+  padding: 0;
 }
 
-/* Set core body defaults */
 body {
   min-height: 100vh;
   line-height: 1.5;
 }
 
-/* Balance text wrapping on headings */
 h1, h2 {
   text-wrap: balance;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-}
-
-/* Make images easier to work with */
-img,
-picture {
+img {
   max-width: 100%;
   display: block;
 }
@@ -93,3 +80,68 @@ picture {
     --m-cardHeader: var(--primitive-size-4);
     --m-cardLink: var(--primitive-size-16);
 }
+
+/* LAYOUT */
+
+/* Centering content for the Challenge */
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+}
+
+main {
+  align-self: center;
+}
+/* ---------------------------------- */
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400 600 700;
+  font-style: normal;
+  src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+body {
+  font-family: var(--ff-body);
+  background: var(--clr-bodyBG);
+  color: var(--clr-bodyTxt);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--m-cardMobile);
+  max-width: 24rem;
+  margin-inline: var(--m-cardMobile);
+  padding: var(--p-cardMobile);
+  background: var(--clr-cardBG);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.card__profile-img {
+  border-radius: 50%;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--m-cardHeader);
+}
+
+.card__header-name {
+  font-size: var(--fs-cardName);
+}
+
+.card__header-location {
+  color: var(--clr-cardLocation);
+  font-size: var(--fs-cardLocation);
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
